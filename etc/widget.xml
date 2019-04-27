@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="simplevendor_feedreader_list" class="SimpleVendor\FeedReader\Block\Widget\Post\PostList"
+            placeholder_image="SimpleVendor_FeedReader::images/simplevendor_widget_block.png">
+        <label translate="true">Wordpress FeedReader</label>
+        <description>Widget that shows posts from the rss feed of a Wordpress site. </description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="false" visible="true">
+                <label translate="true">Title</label>
+            </parameter>
+            <parameter name="feed_url" xsi:type="text" required="false" visible="true">
+                <label translate="true">Feed Url</label>
+                <description translate="true">Example: https://www.myblogdomain.com/blog/feed/</description>
+            </parameter>
+            <parameter name="post_number" xsi:type="text" required="true" visible="true">
+                <label translate="true">Number of Posts to Show</label>
+                <description translate="true">Make sure to check your wordpress configuration also.</description>
+                <value>1</value>
+            </parameter>
+        </parameters>
+
+    </widget>
+</widgets>

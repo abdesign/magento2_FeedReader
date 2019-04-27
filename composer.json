@@ -1,0 +1,17 @@
+    {
+        "name": "SimpleVendor/FeedReader",
+        "description": "Provides a widget that reads and displays posts from a Wordpress RSS Feed.",
+        "type": "magento2-module",
+        "version": "0.5.0",
+        "license": [
+            "commercial"
+        ],
+        "autoload": {
+            "files": [
+                "registration.php"
+            ],
+            "psr-4": {
+                "SimpleVendor\\FeedReader\\": ""
+            }
+        }
+    }

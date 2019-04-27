@@ -1,0 +1,29 @@
+<div class="title feedReader-title"><?php echo $block->getTitle('title'); ?></div>
+<?php 
+  $posts = $block->getPosts(); 
+
+  if (!$block->hasData('post_number') || $block->getData('post_number') <= 0) {
+    $block->setData('post_number', 1);
+  }
+
+  $postCount = 0;
+  $postHtml = '<div class="feedReader">';
+  
+  if(is_string($posts)){
+    $postHtml .= $posts;
+  }else if(is_array($posts)){
+    foreach($posts as $post){
+      if($postCount >= $block->getData('post_number')) break;
+
+      $postHtml .= '<div class="feedReader-post">';
+      $postHtml .= '<h3><a href="'.$post['link'].'">'.$post['title'].'</a></h3>';
+      $postHtml .= '<p>'.$post['description'].'</p>';
+      $postHtml .= '</div>';
+
+      $postCount++;
+    }
+  }
+  $postHtml .= '</div>';
+
+  echo $postHtml;
+?>
